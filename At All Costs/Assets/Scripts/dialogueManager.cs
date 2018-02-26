@@ -10,9 +10,11 @@ public class dialogueManager : MonoBehaviour {
 
     public Animator animator;
 
+    private Queue<string> names;
     private Queue<string> speech;
  
 	void Start () {
+        names = new Queue<string>();
         speech = new Queue<string>();
 	}
 
@@ -20,19 +22,25 @@ public class dialogueManager : MonoBehaviour {
     {
         animator.SetBool("IsOpen", true);
 
-        NameText.text = dialogue.name;
+        //NameText.text = dialogue.name;
 
         speech.Clear();
+
+        foreach (string name in dialogue.names)
+        {
+            names.Enqueue(name);
+            //Debug.Log(name);
+        }
 
         foreach (string sentance in dialogue.sentances)
         {
             speech.Enqueue(sentance);
         }
 
-        DisplayNectSentence();
+        DisplayNextSentence();
     }
 
-    public void DisplayNectSentence()
+    public void DisplayNextSentence()
     {
         if(speech.Count == 0)
         {
@@ -41,7 +49,9 @@ public class dialogueManager : MonoBehaviour {
         }
 
         string sentance = speech.Dequeue();
+        string name = names.Dequeue();
         StopAllCoroutines();
+        NameText.text = name;
         StartCoroutine(TypeSentence(sentance));
     }
 
