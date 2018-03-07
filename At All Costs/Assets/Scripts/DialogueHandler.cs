@@ -23,6 +23,8 @@ public class DialogueHandler : MonoBehaviour {
 
     int msgNum = 0;
 
+    int currentIndex = 0;
+
     private bool entered = false;
 
     void Start()
@@ -56,6 +58,7 @@ public class DialogueHandler : MonoBehaviour {
 
     public void LoadDialogue()
     {
+        currentIndex = 0;
         nameText.text = dialogue.npcName;
         messageText.text = dialogue.messages[0].text;
 
@@ -67,16 +70,19 @@ public class DialogueHandler : MonoBehaviour {
 
     public void LoadText()
     {
+        
         string currentMsg = dialogue.messages[msgNum].text;
         Debug.Log(currentMsg);
-        int currentMsgIndex = Array.IndexOf(dialogue.messages, currentMsg) + 1;
-        Debug.Log(currentMsgIndex);
-        int nextMsg = dialogue.messages[currentMsgIndex].responses[0].next;
+        //int currentMsgIndex = Array.IndexOf(dialogue.messages, currentMsg) + 1;
+        //Debug.Log(currentMsgIndex);
+        int nextMsg = dialogue.messages[currentIndex].responses[0].next;
         Debug.Log(nextMsg);
 
         messageText.text = dialogue.messages[nextMsg].text;
         reponseTextOne.text = dialogue.messages[nextMsg].responses[0].reply;
         msgNum = nextMsg;
         Debug.Log(msgNum);
+
+        currentIndex++;
     }
 }
