@@ -283,9 +283,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Contoller.cs" />
-    <Compile Include="Assets\Scripts\Dialogue.cs" />
-    <Compile Include="Assets\Scripts\dialogueManager.cs" />
-    <Compile Include="Assets\Scripts\dialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\DialogueClass.cs" />
+    <Compile Include="Assets\Scripts\DialogueHandler.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
