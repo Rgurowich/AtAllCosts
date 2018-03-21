@@ -11,36 +11,31 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: FirstTyler
   m_EditorClassIdentifier: Assembly-CSharp::CreateDialogue
-  npcID: 2
+  npcID: 1
   npcName: Tyler
   messages:
-  - text: 
+  - text: "Ah good to see you\u2019re finally up engineer"
     responses:
-    - next: 0
-      reply: 
+    - next: 1
+      reply: Sir!
       prereq: 
       trigger: 
-    - next: 0
-      reply: 
-      prereq: 
-      trigger: 
-  - text: 
+  - text: "At ease Mires. How\u2019s your leg feeling?"
     responses:
-    - next: 0
-      reply: 
+    - next: 2
+      reply: Good thank you sir. All patched up!
       prereq: 
       trigger: 
-    - next: 0
-      reply: 
-      prereq: 
-      trigger: 
-  - text: 
+  - text: We start set up tomorrow at 0500 hours sharp! I expect you all to be ready
+      am i clear?
     responses:
-    - next: 0
-      reply: 
+    - next: 3
+      reply: Yes Sir!
       prereq: 
       trigger: 
-    - next: 0
-      reply: 
+  - text: Good. Make sure you get decent nights sleeps. Busy day ahead of us! Dismissed!
+    responses:
+    - next: -1
+      reply: Yes Sir!
       prereq: 
       trigger: 

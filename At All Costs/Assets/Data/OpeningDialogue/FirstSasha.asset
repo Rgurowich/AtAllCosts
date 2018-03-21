@@ -11,7 +11,7 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: FirstSasha
   m_EditorClassIdentifier: Assembly-CSharp::CreateDialogue
-  npcID: 1
+  npcID: 2
   npcName: Sasha
   messages:
   - text: "Oh hey you\u2019re up! How\u2019s your leg feeling?"
@@ -81,7 +81,7 @@ MonoBehaviour:
   - text: "Haha i haven\u2019t even introduced myself! I\u2019m Sasha Fleets, I\u2019m
       a science technician and engineer, like you!"
     responses:
-    - next: 1
+    - next: 10
       reply: Ah well hi Sasha, Looking forward to working with you!
       prereq: 
       trigger: 
@@ -91,7 +91,7 @@ MonoBehaviour:
       mostly breathable air and it plenty of underground springs so it\u2019s perfectly
       viable as a new earth."
     responses:
-    - next: 1
+    - next: 10
       reply: "What? That\u2019s over 700 million light years away from the Milky Way!
         How long have we been in SA (Suspended animation) for?"
       prereq: 
@@ -100,7 +100,7 @@ MonoBehaviour:
       were on the team with but i wanted to know who i was gonna be saving humanity
       with haha
     responses:
-    - next: 1
+    - next: 10
       reply: "Hmm, fair enough haha, I guess i won\u2019t bother introducing myself
         then"
       prereq: 
@@ -109,5 +109,23 @@ MonoBehaviour:
     responses:
     - next: -1
       reply: '*Leave*'
+      prereq: 
+      trigger: 
+  - text: Sooooo..
+    responses:
+    - next: 6
+      reply: "So, What\u2019s your name?"
+      prereq: 
+      trigger: 
+    - next: 7
+      reply: So where are we exactly?
+      prereq: 
+      trigger: 
+    - next: 8
+      reply: How did you know who i was when you found me?
+      prereq: 
+      trigger: 
+    - next: 9
+      reply: Seeya round
       prereq: 
       trigger: 
