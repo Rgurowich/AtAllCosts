@@ -9,12 +9,16 @@ public class WireMiniGame : MonoBehaviour {
     public Text timeDisplay;
     public string FirstWireName;
     public Button[] Wires;
-    public Image[] PowerBars;
+    public Image[] unlitPower;
+    private Image[] litPower;
 
     private bool blueConnected;
     private bool redConnected;
     private bool purpleConnected;
     private bool greenConnected;
+
+    private int powerOn;
+    private int randNum;
 
     // Use this for initialization
     void Start () {
@@ -23,7 +27,8 @@ public class WireMiniGame : MonoBehaviour {
         blueConnected = false;
         redConnected = false;
         purpleConnected = false;
-}
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -92,25 +97,30 @@ public class WireMiniGame : MonoBehaviour {
             {
                 Debug.Log("BLUE AND BLUE");
                 FirstWireName = "Not Selected";
-                blueConnected = true;                
+                blueConnected = true;
+                PowerIndicater();
+
             }         
             else if (FirstWireName == "TopRed" && secondWireName == "BottomRed" || FirstWireName == "BottomRed" && secondWireName == "TopRed")
             {
                 Debug.Log("RED AND RED");
                 FirstWireName = "Not Selected";
                 redConnected = true;
+                PowerIndicater();
             }
             else if (FirstWireName == "TopPurple" && secondWireName == "BottomPurple" || FirstWireName == "BottomPurple" && secondWireName == "TopPurple")
             {
                 Debug.Log("PURPLE AND PURPLE");
                 FirstWireName = "Not Selected";
                 purpleConnected = true;
+                PowerIndicater();
             }
             else if (FirstWireName == "TopGreen" && secondWireName == "BottomGreen" || FirstWireName == "BottomGreen" && secondWireName == "TopGreen")
             {
                 Debug.Log("GREEN AND GREEN");
                 FirstWireName = "Not Selected";
                 greenConnected = true;
+                PowerIndicater();
             }
             else
             {
@@ -120,5 +130,24 @@ public class WireMiniGame : MonoBehaviour {
         }
         
 
+    }
+
+    void PowerIndicater()
+    {
+        
+        for (int i = powerOn; i <= unlitPower.Length;)
+        {
+            Debug.Log(powerOn);
+            if (unlitPower[i].GetComponent<Image>().color == Color.green)
+            {
+                break;
+            }
+            else if (randNum <= 2) 
+            {
+                unlitPower[i].GetComponent<Image>().color = Color.green;
+                randNum++;
+                powerOn++;
+            }        
+        }   
     }
 }
