@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3217ad733ccbd3e4d89af07e4bdc7add, type: 3}
+  m_Name: OpeningBrandon
+  m_EditorClassIdentifier: 
+  npcID: 0
+  npcName: Brandon
+  messages:
+  - text: Hello there Mr Mires
+    responses:
+    - next: 1
+      reply: Uh hi.. Um
+      prereq: 
+      trigger: 
+  - text: "Brandon Phillips is the name. Doctor of all sciences! I\u2019m the lead
+      researcher and botanist on the station."
+    responses:
+    - next: 2
+      reply: Well sounds like we are in good hand then. Good to meet you Brandon!
+      prereq: 
+      trigger: 
+  - text: Likewise my friend.
+    responses:
+    - next: 3
+      reply: "So you\u2019re heading up the science team Dr. Phillips?"
+      prereq: 
+      trigger: 
+    - next: 4
+      reply: See much potential in this place then?
+      prereq: 
+      trigger: 
+    - next: 5
+      reply: Seeya round
+      prereq: 
+      trigger: 
+  - text: Am i indeed Hayden. I will also be incharge of our food situation so if
+      you get a bit peckish, look me up.
+    responses:
+    - next: 6
+      reply: "Well sounds like you\u2019re going to be very popular here then haha"
+      prereq: 
+      trigger: 
+  - text: "Lots of potential! I can\u2019t wait for you and Sasha to get cracking
+      for the terraforming process! If you want proof this place is a goldmine go
+      check the research computer. The bases systems have logged some fascinating
+      things."
+    responses:
+    - next: 7
+      reply: "I\u2019m glad you think that Doc and yeah we are excited to get started.
+        Ok i will check that out!"
+      prereq: 
+      trigger: 
+  - text: I will bid you adieu
+    responses:
+    - next: -1
+      reply: '*Leave*'
+      prereq: 
+      trigger: 
+  - text: I should hope so haha
+    responses:
+    - next: 2
+      reply: Me too
+      prereq: 
+      trigger: 
+  - text: Let me know what you think!
+    responses:
+    - next: 2
+      reply: Will do
+      prereq: 
+      trigger: 

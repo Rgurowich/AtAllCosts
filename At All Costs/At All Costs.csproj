@@ -285,6 +285,8 @@
     <Compile Include="Assets\Scripts\Contoller.cs" />
     <Compile Include="Assets\Scripts\DialogueClass.cs" />
     <Compile Include="Assets\Scripts\DialogueHandler.cs" />
+    <Compile Include="Assets\Scripts\DoorInteraction.cs" />
+    <Compile Include="Assets\Scripts\DoorScript.cs" />
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
     <Compile Include="Assets\Scripts\MiniGames\WireMiniGame.cs" />
   </ItemGroup>

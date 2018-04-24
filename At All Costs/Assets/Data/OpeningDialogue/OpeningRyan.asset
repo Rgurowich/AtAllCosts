@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3217ad733ccbd3e4d89af07e4bdc7add, type: 3}
+  m_Name: OpeningRyan
+  m_EditorClassIdentifier: 
+  npcID: 0
+  npcName: Ryan
+  messages:
+  - text: Uh Hi there
+    responses:
+    - next: 1
+      reply: Hey there, Everything ok?
+      prereq: 
+      trigger: 
+  - text: "Hmm What? Oh yeah i'm fine. How\u2019s your leg?"
+    responses:
+    - next: 2
+      reply: Good thanks, Sasha sorted me out
+      prereq: 
+      trigger: 
+  - text: "Ah yeah she did a good job actually. Not sure why i\u2019m even here haha"
+    responses:
+    - next: 3
+      reply: "I should introduce myself. I\u2019m Hayden."
+      prereq: 
+      trigger: 
+    - next: 4
+      reply: "So you\u2019re the team medic?"
+      prereq: 
+      trigger: 
+    - next: 5
+      reply: You seem a bit distracted, you ok?
+      prereq: 
+      trigger: 
+    - next: 6
+      reply: Seeya round
+      prereq: 
+      trigger: 
+  - text: "Ah right yeah, i\u2019m Dr. Ryan Adder. Good to meet you Hayden"
+    responses:
+    - next: 2
+      reply: Good to meet you too Doc.
+      prereq: 
+      trigger: 
+  - text: umm yes that's me, You ever get hurt just pop to the medic bay. Oh yeah
+      if you need anything for that leg just let me know.
+    responses:
+    - next: 7
+      reply: Will do, think its ok now though
+      prereq: 
+      trigger: 
+  - text: "Uhh what? Umm yeah i'm ok, just feeling a bit strange. Probably the fact
+      im hundreds of light years away from my home..ha i\u2019ll be fine."
+    responses:
+    - next: 8
+      reply: "Yeah it\u2019s slightly daunting i guess. Don\u2019t worry Doc, I\u2019m
+        sure we\u2019ll settle in soon"
+      prereq: 
+      trigger: 
+  - text: Yeah right, bye
+    responses:
+    - next: -1
+      reply: '*Leave*'
+      prereq: 
+      trigger: 
+  - text: Well you know where i am
+    responses:
+    - next: 2
+      reply: Thanks doc
+      prereq: 
+      trigger: 
+  - text: Ha yeah whatever you say.
+    responses:
+    - next: 2
+      reply: '....'
+      prereq: 
+      trigger: 

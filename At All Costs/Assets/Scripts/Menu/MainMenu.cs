@@ -9,14 +9,4 @@ public class MainMenu : MonoBehaviour {
     {
         SceneManager.LoadScene("AAC_Start");
     }
-
-    //public void ExitGame()
-    //{
-
-    //}
-
-    //public void Options()
-    //{
-
-    //}
 }

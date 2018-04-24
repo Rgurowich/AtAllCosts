@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3217ad733ccbd3e4d89af07e4bdc7add, type: 3}
+  m_Name: OpeningEmilia
+  m_EditorClassIdentifier: 
+  npcID: 0
+  npcName: Emilia
+  messages:
+  - text: Uh Hi there
+    responses:
+    - next: 1
+      reply: "I should introduce myself. I\u2019m Hayden."
+      prereq: 
+      trigger: 
+    - next: 2
+      reply: "So you\u2019re part of the science team?"
+      prereq: 
+      trigger: 
+    - next: 3
+      reply: So what do you think of this place then.
+      prereq: 
+      trigger: 
+    - next: 4
+      reply: Seeya round
+      prereq: 
+      trigger: 
+  - text: "Hi Hayden, I\u2019m Emilia. Lovely to meet you."
+    responses:
+    - next: 0
+      reply: Lovely to meet you to Emilia
+      prereq: 
+      trigger: 
+  - text: "Yeah. I\u2019m working with Dr. Chapel to make sure everything is ready
+      for the colony ship, I\u2019m excited to get started."
+    responses:
+    - next: 5
+      reply: "That\u2019s good to hear. I\u2019m look forward to them getting here"
+      prereq: 
+      trigger: 
+  - text: "Seems ok, Looks very dry haha but this place hasn\u2019t given me any reason
+      to doubt it yet."
+    responses:
+    - next: 6
+      reply: "Don\u2019t worry about the water. There's some here, somewhere haha."
+      prereq: 
+      trigger: 
+  - text: Bye
+    responses:
+    - next: -1
+      reply: '*leave*'
+      prereq: 
+      trigger: 
+  - text: "Me too. Be nice to know we\u2019ve saved all those people."
+    responses:
+    - next: 0
+      reply: Sure is!
+      prereq: 
+      trigger: 
+  - text: "Haha well i hope you\u2019re right."
+    responses:
+    - next: 0
+      reply: '...'
+      prereq: 
+      trigger: 

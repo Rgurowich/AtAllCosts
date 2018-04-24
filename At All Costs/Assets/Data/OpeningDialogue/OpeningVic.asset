@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3217ad733ccbd3e4d89af07e4bdc7add, type: 3}
+  m_Name: OpeningVic
+  m_EditorClassIdentifier: 
+  npcID: 0
+  npcName: Vic
+  messages:
+  - text: Hey Kid, How you doin?
+    responses:
+    - next: 1
+      reply: "Hi, I\u2019m doing ok. Thanks for helping me out there"
+      prereq: 
+      trigger: 
+  - text: "Don\u2019t mention it"
+    responses:
+    - next: 2
+      reply: "I should introduce myself. I\u2019m Hayden."
+      prereq: 
+      trigger: 
+    - next: 3
+      reply: "So you\u2019re part of the security team?"
+      prereq: 
+      trigger: 
+    - next: 4
+      reply: So what do you think of this place?
+      prereq: 
+      trigger: 
+    - next: 5
+      reply: Seeya round
+      prereq: 
+      trigger: 
+  - text: "Yeah Sasha told me who you were, I\u2019m Vic."
+    responses:
+    - next: 1
+      reply: Ah right, well good to meet you Vic
+      prereq: 
+      trigger: 
+  - text: "Yup, you ever see anything weird or suspect come straight to me or Chris.
+      We don\u2019t need any heros on this station."
+    responses:
+    - next: 6
+      reply: Uh Right, Understood
+      prereq: 
+      trigger: 
+  - text: "This base camp or the planet? Either way i don\u2019t like it. No signs
+      of any sort of life, no surface water, plus the place is dead silent."
+    responses:
+    - next: 7
+      reply: "Really? Well it must be a suitable planet or we wouldn\u2019t be here.
+        Once we start the terraforming it should become a bit more homely."
+      prereq: 
+      trigger: 
+  - text: Later kid.
+    responses: []
+  - text: Good to hear that Hayden
+    responses:
+    - next: 1
+      reply: No worries
+      prereq: 
+      trigger: 
+  - text: "This place won\u2019t ever be homely..There is something wrong with this
+      place i\u2019m telling you"
+    responses:
+    - next: 1
+      reply: Fair enough
+      prereq: 
+      trigger: 

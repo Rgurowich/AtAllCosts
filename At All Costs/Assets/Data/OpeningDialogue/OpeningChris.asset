@@ -1,0 +1,91 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3217ad733ccbd3e4d89af07e4bdc7add, type: 3}
+  m_Name: OpeningChris
+  m_EditorClassIdentifier: 
+  npcID: 0
+  npcName: Chris
+  messages:
+  - text: Hey dude, back in one piece i see haha
+    responses:
+    - next: 1
+      reply: Yeah haha
+      prereq: 
+      trigger: 
+  - text: Good to see you up and about
+    responses:
+    - next: 2
+      reply: "I should introduce myself. I\u2019m Hayden."
+      prereq: 
+      trigger: 
+    - next: 3
+      reply: "So you\u2019re part of the security detail?"
+      prereq: 
+      trigger: 
+    - next: 4
+      reply: What do you think of this place then?
+      prereq: 
+      trigger: 
+    - next: 5
+      reply: Seeya round
+      prereq: 
+      trigger: 
+  - text: Good to final meet you Hayden. Chris Chapel at your service
+    responses:
+    - next: 2
+      reply: Very good to meet you Chris!
+      prereq: 
+      trigger: 
+  - text: "Sure am! Me and and Vic got this place locked down so don\u2019t you worry
+      haha. Although don\u2019t listen to Vic\u2019s scaremongering. He\u2019s a bit
+      of a sceptic."
+    responses:
+    - next: 6
+      reply: "That's good to hear haha. Scaremongering? Doesn\u2019t sound like something
+        a security guy should be doing."
+      prereq: 
+      trigger: 
+  - text: "Hmm well i mean it looks pretty barron to me but i guess wouldn\u2019t
+      be here if that was the case. It is very silent though."
+    responses:
+    - next: 7
+      reply: "As soon as the terraformers are up this place should be looking a bit
+        more vibrant don\u2019t worry."
+      prereq: 
+      trigger: 
+  - text: Later man
+    responses:
+    - next: -1
+      reply: '*Leave*'
+      prereq: 
+      trigger: 
+  - text: "He likes to make people aware of ever danger around them which sometimes
+      make people a bit saver, but most of the time it just makes them scared. Wouldn\u2019t
+      worry about it though. We\u2019re all smart."
+    responses:
+    - next: 8
+      reply: "That's good to hear haha. Scaremongering? Doesn\u2019t sound like something
+        a security guy should be doing"
+      prereq: 
+      trigger: 
+  - text: "That\u2019s great to hear Hayden, I hope you\u2019re right."
+    responses:
+    - next: 2
+      reply: Me and Sasha will do our bests
+      prereq: 
+      trigger: 
+  - text: "Don\u2019t get me wrong, He\u2019s a good guy and he\u2019ll keep you lot
+      safe. Just a bit over the top sometimes. Don\u2019t worry about it."
+    responses:
+    - next: 2
+      reply: Alright, Will do i guess.
+      prereq: 
+      trigger: 

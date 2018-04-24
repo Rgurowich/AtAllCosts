@@ -67,7 +67,7 @@ public class DialogueHandler : MonoBehaviour {
         //reponseTextFour.text = dialogue.messages[0].responses[3].reply;
     }
 
- 
+
     public void LoadText()
     {
         int buttonPressed = 0;
@@ -137,9 +137,5 @@ public class DialogueHandler : MonoBehaviour {
         msgNum = nextMsg;
         Debug.Log(msgNum);
         currentIndex++;
-        //if (currentIndex >= dialogue.messages.Length)
-        //{
-        //    currentIndex -= 3;
-        //}
     }
 }

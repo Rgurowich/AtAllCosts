@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
+[CreateAssetMenu(fileName = "New Dialogue", menuName = "Data / New Dialogue")]
 public class DialogueClass : ScriptableObject
 {
     public int npcID;
@@ -26,6 +27,4 @@ public class Response
     public string trigger;
 
 }
-
-[CreateAssetMenu(fileName = "New Dialogue", menuName = "Data / New Dialogue")]
 public class CreateDialogue : DialogueClass {}
