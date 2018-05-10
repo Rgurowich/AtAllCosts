@@ -22,17 +22,25 @@ public class DialogueHandler : MonoBehaviour {
     public Text reponseTextThree;
     public Text reponseTextFour;
 
+    private int resLength;
+    private int nextMsg;
+
     int msgNum = 0;
 
     int currentIndex = 0;
 
     private bool entered = false;
+    public bool firstTime = false;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && entered == true)
         {
             dialogueBox.SetActive(true);
+            reponseOne.SetActive(false);
+            reponseTwo.SetActive(false);
+            reponseThree.SetActive(false);
+            reponseFour.SetActive(false);
             LoadDialogue();
         }
     }
@@ -55,16 +63,25 @@ public class DialogueHandler : MonoBehaviour {
 
     public void LoadDialogue()
     {
-        currentIndex = 0;
-        nameText.text = dialogue.npcName;
-        Debug.Log(dialogue.npcName);
-        messageText.text = dialogue.messages[0].text;
-        Debug.Log(dialogue.messages[0].text);
-
-        reponseTextOne.text = dialogue.messages[0].responses[0].reply;
-        //reponseTextTwo.text = dialogue.messages[0].responses[1].reply;
-        //reponseTextThree.text = dialogue.messages[0].responses[2].reply;
-        //reponseTextFour.text = dialogue.messages[0].responses[3].reply;
+        if (firstTime == false)
+        {
+            firstTime = true;
+            currentIndex = 0;
+            nameText.text = dialogue.npcName;
+            Debug.Log(dialogue.npcName);
+            messageText.text = dialogue.messages[0].text;
+            Debug.Log(dialogue.messages[0].text);
+            resLength = dialogue.messages[0].responses.Length;
+            GetResLength();
+        }
+        else
+        {
+            currentIndex = dialogue.messages.Length - 1;
+            nameText.text = dialogue.npcName;
+            messageText.text = dialogue.messages[dialogue.messages.Length-1].text;
+            resLength = dialogue.messages[dialogue.messages.Length-1].responses.Length;
+            GetResLengthReturn();
+        }     
     }
 
 
@@ -95,12 +112,32 @@ public class DialogueHandler : MonoBehaviour {
         reponseThree.SetActive(false);
         reponseFour.SetActive(false);
 
-        int nextMsg = dialogue.messages[currentIndex].responses[buttonPressed].next;
-        int resLength = dialogue.messages[nextMsg].responses.Length;
+        if(dialogue.messages[currentIndex].responses[0].reply == "*Leave*")
+        {
+            dialogueBox.SetActive(false);
+        }
+
+        Debug.Log("Current = " + currentIndex);
+
+        nextMsg = dialogue.messages[currentIndex].responses[buttonPressed].next;
+
+        resLength = dialogue.messages[nextMsg].responses.Length;
+
         Debug.Log("Res Length = " + resLength);
         Debug.Log("Next Message = " + nextMsg);
+
         messageText.text = dialogue.messages[nextMsg].text;
-        if(resLength == 1)
+
+        GetResLength();
+
+        msgNum = nextMsg;
+        Debug.Log(msgNum);
+        currentIndex = msgNum;
+    }
+
+    void GetResLength()
+    {
+        if (resLength == 1)
         {
             reponseOne.SetActive(true);
             reponseTextOne.text = dialogue.messages[nextMsg].responses[0].reply;
@@ -134,8 +171,43 @@ public class DialogueHandler : MonoBehaviour {
             reponseTextFour.text = dialogue.messages[nextMsg].responses[3].reply;
 
         }
-        msgNum = nextMsg;
-        Debug.Log(msgNum);
-        currentIndex++;
+    }
+
+    void GetResLengthReturn()
+    {
+        if (resLength == 1)
+        {
+            reponseOne.SetActive(true);
+            reponseTextOne.text = dialogue.messages[dialogue.messages.Length - 1].responses[0].reply;
+        }
+        if (resLength == 2)
+        {
+            reponseOne.SetActive(true);
+            reponseTextOne.text = dialogue.messages[dialogue.messages.Length - 1].responses[0].reply;
+            reponseTwo.SetActive(true);
+            reponseTextTwo.text = dialogue.messages[dialogue.messages.Length - 1].responses[1].reply;
+        }
+        if (resLength == 3)
+        {
+            reponseOne.SetActive(true);
+            reponseTextOne.text = dialogue.messages[dialogue.messages.Length - 1].responses[0].reply;
+            reponseTwo.SetActive(true);
+            reponseTextTwo.text = dialogue.messages[dialogue.messages.Length - 1].responses[1].reply;
+            reponseThree.SetActive(true);
+            reponseTextThree.text = dialogue.messages[dialogue.messages.Length - 1].responses[2].reply;
+
+        }
+        if (resLength == 4)
+        {
+            reponseOne.SetActive(true);
+            reponseTextOne.text = dialogue.messages[dialogue.messages.Length - 1].responses[0].reply;
+            reponseTwo.SetActive(true);
+            reponseTextTwo.text = dialogue.messages[dialogue.messages.Length - 1].responses[1].reply;
+            reponseThree.SetActive(true);
+            reponseTextThree.text = dialogue.messages[dialogue.messages.Length - 1].responses[2].reply;
+            reponseFour.SetActive(true);
+            reponseTextFour.text = dialogue.messages[dialogue.messages.Length - 1].responses[3].reply;
+
+        }
     }
 }

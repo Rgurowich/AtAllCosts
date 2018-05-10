@@ -67,7 +67,7 @@ MonoBehaviour:
       trigger: 
   - text: Yeah right, bye
     responses:
-    - next: -1
+    - next: 0
       reply: '*Leave*'
       prereq: 
       trigger: 
@@ -81,5 +81,23 @@ MonoBehaviour:
     responses:
     - next: 2
       reply: '....'
+      prereq: 
+      trigger: 
+  - text: Oh um hi
+    responses:
+    - next: 3
+      reply: "I should introduce myself. I\u2019m Hayden."
+      prereq: 
+      trigger: 
+    - next: 4
+      reply: "So you\u2019re the team medic?"
+      prereq: 
+      trigger: 
+    - next: 5
+      reply: You seem a bit distracted, you ok?
+      prereq: 
+      trigger: 
+    - next: 6
+      reply: Seeya round
       prereq: 
       trigger: 

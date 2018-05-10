@@ -54,8 +54,8 @@ MonoBehaviour:
       trigger: 
   - text: Bye
     responses:
-    - next: -1
-      reply: '*leave*'
+    - next: 0
+      reply: '*Leave*'
       prereq: 
       trigger: 
   - text: "Me too. Be nice to know we\u2019ve saved all those people."
@@ -68,5 +68,23 @@ MonoBehaviour:
     responses:
     - next: 0
       reply: '...'
+      prereq: 
+      trigger: 
+  - text: Oh hey.
+    responses:
+    - next: 1
+      reply: "I should introduce myself. I\u2019m Hayden."
+      prereq: 
+      trigger: 
+    - next: 2
+      reply: "So you\u2019re part of the science team?"
+      prereq: 
+      trigger: 
+    - next: 3
+      reply: So what do you think of this place then.
+      prereq: 
+      trigger: 
+    - next: 4
+      reply: Seeya round
       prereq: 
       trigger: 

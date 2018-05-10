@@ -4,29 +4,26 @@ using UnityEngine;
 
 public class DoorInteraction : MonoBehaviour {
 
-    private DoorScript door;
-    private bool entered = false;
-    private Vector3 player;
-    private Vector3 exit;
+    public GameObject doorIcon;
+    public GameObject chatIcon;
+    public Transform doors;
 
-    //void Update()
-    //{
-    //    player = GameObject.Find("Hayden").transform.position;
-    //    if (Input.GetKeyDown(KeyCode.UpArrow) && entered == true)
-    //    {
-    //        player = door.doorway;
-    //    }
-    //}
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.transform.IsChildOf(doors))
+        {
+            doorIcon.SetActive(true);
+        }
+        else
+        {
+            chatIcon.SetActive(true);
+        }
 
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    Debug.Log("entered");
-    //    entered = true;
-    //}
+    }
 
-    //private void OnTriggerExit2D(Collider2D collision)
-    //{
-    //    Debug.Log("Exit");
-    //    entered = false;
-    //}
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        doorIcon.SetActive(false);
+        chatIcon.SetActive(false);
+    }
 }

@@ -107,11 +107,29 @@ MonoBehaviour:
       trigger: 
   - text: Seeya Later!
     responses:
-    - next: -1
+    - next: 11
       reply: '*Leave*'
       prereq: 
       trigger: 
   - text: Soooo..
+    responses:
+    - next: 6
+      reply: "So, What\u2019s your name?"
+      prereq: 
+      trigger: 
+    - next: 7
+      reply: So where are we exactly?
+      prereq: 
+      trigger: 
+    - next: 8
+      reply: How did you know who i was when you found me?
+      prereq: 
+      trigger: 
+    - next: 9
+      reply: Seeya round
+      prereq: 
+      trigger: 
+  - text: Hey again!
     responses:
     - next: 6
       reply: "So, What\u2019s your name?"

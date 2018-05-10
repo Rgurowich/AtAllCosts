@@ -287,8 +287,12 @@
     <Compile Include="Assets\Scripts\DialogueHandler.cs" />
     <Compile Include="Assets\Scripts\DoorInteraction.cs" />
     <Compile Include="Assets\Scripts\DoorScript.cs" />
+    <Compile Include="Assets\Scripts\Intro.cs" />
     <Compile Include="Assets\Scripts\Menu\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\MiniGames\WireGameInteraction.cs" />
     <Compile Include="Assets\Scripts\MiniGames\WireMiniGame.cs" />
+    <Compile Include="Assets\Scripts\NextDay.cs" />
+    <Compile Include="Assets\Scripts\Tasks.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Pixel Font - Tripfive\_README.txt" />

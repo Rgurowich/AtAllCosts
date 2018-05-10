@@ -11,9 +11,9 @@ public class DoorScript : MonoBehaviour {
     {
         Debug.Log("In");
         if (collision.gameObject.tag == "Player")
-        {
+        {     
             Debug.Log("Player");
-            if (Input.GetKeyDown(KeyCode.UpArrow))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 Debug.Log("Pressed");
                 foreach (DoorScript door in FindObjectsOfType<DoorScript>())

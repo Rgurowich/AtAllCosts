@@ -40,7 +40,7 @@ MonoBehaviour:
       trigger: 
   - text: Good to final meet you Hayden. Chris Chapel at your service
     responses:
-    - next: 2
+    - next: 1
       reply: Very good to meet you Chris!
       prereq: 
       trigger: 
@@ -63,7 +63,7 @@ MonoBehaviour:
       trigger: 
   - text: Later man
     responses:
-    - next: -1
+    - next: 0
       reply: '*Leave*'
       prereq: 
       trigger: 
@@ -78,14 +78,32 @@ MonoBehaviour:
       trigger: 
   - text: "That\u2019s great to hear Hayden, I hope you\u2019re right."
     responses:
-    - next: 2
+    - next: 1
       reply: Me and Sasha will do our bests
       prereq: 
       trigger: 
   - text: "Don\u2019t get me wrong, He\u2019s a good guy and he\u2019ll keep you lot
       safe. Just a bit over the top sometimes. Don\u2019t worry about it."
     responses:
-    - next: 2
+    - next: 1
       reply: Alright, Will do i guess.
+      prereq: 
+      trigger: 
+  - text: 'How ya doing? '
+    responses:
+    - next: 2
+      reply: "I should introduce myself. I\u2019m Hayden."
+      prereq: 
+      trigger: 
+    - next: 3
+      reply: "So you\u2019re part of the security detail?"
+      prereq: 
+      trigger: 
+    - next: 4
+      reply: What do you think of this place then?
+      prereq: 
+      trigger: 
+    - next: 5
+      reply: Seeya round
       prereq: 
       trigger: 

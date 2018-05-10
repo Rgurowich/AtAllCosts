@@ -60,7 +60,11 @@ MonoBehaviour:
       prereq: 
       trigger: 
   - text: Later kid.
-    responses: []
+    responses:
+    - next: 0
+      reply: '*Leave*'
+      prereq: 
+      trigger: 
   - text: Good to hear that Hayden
     responses:
     - next: 1
@@ -72,5 +76,23 @@ MonoBehaviour:
     responses:
     - next: 1
       reply: Fair enough
+      prereq: 
+      trigger: 
+  - text: Need something?
+    responses:
+    - next: 2
+      reply: "I should introduce myself. I\u2019m Hayden."
+      prereq: 
+      trigger: 
+    - next: 3
+      reply: "So you\u2019re part of the security team?"
+      prereq: 
+      trigger: 
+    - next: 4
+      reply: So what do you think of this place?
+      prereq: 
+      trigger: 
+    - next: 5
+      reply: Seeya round
       prereq: 
       trigger: 

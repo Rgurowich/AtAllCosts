@@ -35,7 +35,13 @@ MonoBehaviour:
       trigger: 
   - text: Good. Make sure you get decent nights sleeps. Busy day ahead of us! Dismissed!
     responses:
-    - next: -1
-      reply: Yes Sir!
+    - next: 0
+      reply: '*Leave*'
+      prereq: 
+      trigger: 
+  - text: Get to bed engineer.
+    responses:
+    - next: 0
+      reply: '*Leave*'
       prereq: 
       trigger: 

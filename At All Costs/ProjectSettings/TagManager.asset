@@ -44,6 +44,9 @@ TagManager:
   - name: Background
     uniqueID: 4221258043
     locked: 0
+  - name: Decor
+    uniqueID: 4068890561
+    locked: 0
   - name: NPC
     uniqueID: 367999771
     locked: 0

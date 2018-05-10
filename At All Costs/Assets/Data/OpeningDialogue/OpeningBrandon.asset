@@ -60,7 +60,7 @@ MonoBehaviour:
       trigger: 
   - text: I will bid you adieu
     responses:
-    - next: -1
+    - next: 0
       reply: '*Leave*'
       prereq: 
       trigger: 
@@ -74,5 +74,19 @@ MonoBehaviour:
     responses:
     - next: 2
       reply: Will do
+      prereq: 
+      trigger: 
+  - text: Good to see you again friend.
+    responses:
+    - next: 3
+      reply: "So you\u2019re heading up the science team Dr. Phillips?"
+      prereq: 
+      trigger: 
+    - next: 4
+      reply: See much potential in this place then?
+      prereq: 
+      trigger: 
+    - next: 5
+      reply: Seeya round
       prereq: 
       trigger: 
