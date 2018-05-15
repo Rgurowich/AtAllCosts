@@ -5,7 +5,6 @@ using UnityEngine;
 public class DoorScript : MonoBehaviour {
 
     public int code;
-    private bool ready;
 
     void OnTriggerStay2D(Collider2D collision)
     {

@@ -7,7 +7,7 @@ public class Intro : MonoBehaviour {
     public Animator lastShip;
     public GameObject ship;
     public GameObject intro;
-    private bool introPlayed;
+    public bool introPlayed;
 
     void Start () {
         intro.SetActive(true);

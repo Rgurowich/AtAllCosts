@@ -5,19 +5,43 @@ using UnityEngine;
 public class Contoller : MonoBehaviour {
 
     public float movementSpeed;
-    float valX;
-    float valY;
-    bool facingRight = true;
-    Rigidbody2D rigBody;
+    private float valX;
+    private float valY;
+    private bool facingRight = true;
+    private Rigidbody2D rigBody;
+    private Animator animator;
+    private AudioSource audio;
+    public AudioClip walking;
+    private bool isWalking;
+    private bool moving;
 
-	void Start () {
+    void Start () {
         rigBody = GetComponent<Rigidbody2D>();
-	}
+        animator = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
+        audio.clip = walking;
+        moving = true;
+    }
 	
 	void Update () {
         valX = Input.GetAxisRaw("Horizontal");
         valY = rigBody.velocity.y;
         rigBody.velocity = new Vector2(valX * movementSpeed, valY);
+        if(rigBody.velocity.x != valX)
+        {
+            animator.SetBool("IsWalking", true);
+            //moving = true;
+            if(!isWalking & moving == true)
+            {
+                moving = false;
+                StartCoroutine(PlayWalk());
+            }
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+            isWalking = false;
+        }
 	}
 
     void LateUpdate()
@@ -35,5 +59,14 @@ public class Contoller : MonoBehaviour {
         }
 
         transform.localScale = localScale;
+    }
+
+    IEnumerator PlayWalk()
+    {
+        isWalking = true;
+        audio.PlayOneShot(walking);
+        yield return new WaitForSeconds(audio.clip.length);
+        isWalking = false;
+        moving = true;
     }
 }

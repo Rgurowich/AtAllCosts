@@ -11,14 +11,14 @@ public class NextDay : MonoBehaviour {
     public Image returnMessage;
     public Image nextDayMessage;
     public Image shipLog;
+    public AudioSource mainMusic;
 
-
-
-	void Update () {
+    void Update () {
 		if(taskList.dayCompleted == true)
         {
             if(Input.GetKeyDown(KeyCode.E) && entered == true)
             {
+                mainMusic.enabled = false;
                 shipLog.gameObject.SetActive(true);
                 GameObject.Find("Hayden").GetComponent<Contoller>().enabled = false;
             }

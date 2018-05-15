@@ -49,7 +49,7 @@ MonoBehaviour:
       reply: You patched up my leg?
       prereq: 
       trigger: 
-  - text: "Haha yeah i did my best! First aid training came in handy with that one.
+  - text: "Haha yeah, i did my best! First aid training came in handy with that one.
       Chris the medic hadn\u2019t landed yet so i just stopped the bleeding and stitched
       you up. He said i did a pretty good job so you should be impressed haha. Do
       you know why you crashed?"

@@ -7,7 +7,7 @@ public class Tasks : MonoBehaviour {
 
     public GameObject TaskBar;
 
-    public bool dayCompleted = false;
+    [HideInInspector]public bool dayCompleted = false;
 
     public DialogueHandler sasha;
     public DialogueHandler chris;
@@ -24,7 +24,6 @@ public class Tasks : MonoBehaviour {
     public Text task5;
     public Text task6;
     public Text task7;
-
 
     void Update () {
 

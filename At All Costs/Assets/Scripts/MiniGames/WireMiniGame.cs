@@ -24,6 +24,12 @@ public class WireMiniGame : MonoBehaviour {
     private int powerOn;
     private int randNum;
 
+    public AudioClip correctClip;
+    public AudioClip incorrectClip;
+    public AudioClip win;
+    private AudioSource audio;
+    public AudioSource music;
+
     // Use this for initialization
     void Start () {
         FirstWireName = "Not Selected";
@@ -32,6 +38,7 @@ public class WireMiniGame : MonoBehaviour {
         redConnected = false;
         purpleConnected = false;
         powerOn = 0;
+        audio = GetComponent<AudioSource>();
     }
 
     void OnEnable()
@@ -55,6 +62,7 @@ public class WireMiniGame : MonoBehaviour {
         if(greenConnected == true && purpleConnected == true && blueConnected == true && redConnected == true)
         {
             timeDisplay.text = "YAAAY";
+            music.enabled = false;
         }
 
         if(timeLeft <= 0)
@@ -65,6 +73,7 @@ public class WireMiniGame : MonoBehaviour {
             }
 
             timeDisplay.text = "FAILED";
+            music.enabled = false;
         }
     }
 
@@ -100,6 +109,7 @@ public class WireMiniGame : MonoBehaviour {
         }
         else
         {
+            audio.clip = correctClip;
             string secondWireName = EventSystem.current.currentSelectedGameObject.name;
             if (FirstWireName == "TopBlue" && secondWireName == "BottomBlue" || FirstWireName == "BottomBlue" && secondWireName == "TopBlue")
             {
@@ -110,6 +120,7 @@ public class WireMiniGame : MonoBehaviour {
                 Wires[2].gameObject.SetActive(false);
                 Wires[4].gameObject.SetActive(false);
                 blueWireConnected.gameObject.SetActive(true);
+                audio.Play();
 
             }         
             else if (FirstWireName == "TopRed" && secondWireName == "BottomRed" || FirstWireName == "BottomRed" && secondWireName == "TopRed")
@@ -121,6 +132,7 @@ public class WireMiniGame : MonoBehaviour {
                 Wires[3].gameObject.SetActive(false);
                 Wires[5].gameObject.SetActive(false);
                 redWireConnected.gameObject.SetActive(true);
+                audio.Play();
             }
             else if (FirstWireName == "TopPurple" && secondWireName == "BottomPurple" || FirstWireName == "BottomPurple" && secondWireName == "TopPurple")
             {
@@ -131,6 +143,7 @@ public class WireMiniGame : MonoBehaviour {
                 Wires[0].gameObject.SetActive(false);
                 Wires[6].gameObject.SetActive(false);
                 purpleWireConnected.gameObject.SetActive(true);
+                audio.Play();
             }
             else if (FirstWireName == "TopGreen" && secondWireName == "BottomGreen" || FirstWireName == "BottomGreen" && secondWireName == "TopGreen")
             {
@@ -141,11 +154,14 @@ public class WireMiniGame : MonoBehaviour {
                 Wires[1].gameObject.SetActive(false);
                 Wires[7].gameObject.SetActive(false);
                 greenWireConnected.gameObject.SetActive(true);
+                audio.Play();
             }
             else
             {
+                audio.clip = incorrectClip;
                 Debug.Log("WRONG");
                 FirstWireName = "Not Selected";
+                audio.Play();
             }
 
             if(redConnected == true && greenConnected == false && purpleConnected == false && blueConnected == false)
@@ -163,10 +179,14 @@ public class WireMiniGame : MonoBehaviour {
             else if (redConnected == true && greenConnected == true && purpleConnected == true && blueConnected == true)
             {
                 Debug.Log(" 4 CORRECT ");
+                audio.clip = win;
+                audio.Play();
             }
             else
             {
+                audio.clip = incorrectClip;
                 ResetGame();
+                audio.Play();
             }
         }
         
