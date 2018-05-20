@@ -10,7 +10,7 @@ public class Contoller : MonoBehaviour {
     private bool facingRight = true;
     private Rigidbody2D rigBody;
     private Animator animator;
-    private AudioSource audio;
+    private AudioSource gameAudio;
     public AudioClip walking;
     private bool isWalking;
     private bool moving;
@@ -18,8 +18,8 @@ public class Contoller : MonoBehaviour {
     void Start () {
         rigBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        audio = GetComponent<AudioSource>();
-        audio.clip = walking;
+        gameAudio = GetComponent<AudioSource>();
+        gameAudio.clip = walking;
         moving = true;
     }
 	
@@ -30,7 +30,7 @@ public class Contoller : MonoBehaviour {
         if(rigBody.velocity.x != valX)
         {
             animator.SetBool("IsWalking", true);
-            //moving = true;
+
             if(!isWalking & moving == true)
             {
                 moving = false;
@@ -64,8 +64,8 @@ public class Contoller : MonoBehaviour {
     IEnumerator PlayWalk()
     {
         isWalking = true;
-        audio.PlayOneShot(walking);
-        yield return new WaitForSeconds(audio.clip.length);
+        gameAudio.PlayOneShot(walking);
+        yield return new WaitForSeconds(gameAudio.clip.length);
         isWalking = false;
         moving = true;
     }

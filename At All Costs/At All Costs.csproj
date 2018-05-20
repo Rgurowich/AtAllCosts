@@ -283,6 +283,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Contoller.cs" />
+    <Compile Include="Assets\Scripts\DailyTasks\Tasks.cs" />
+    <Compile Include="Assets\Scripts\DailyTasks\Tasks2.cs" />
     <Compile Include="Assets\Scripts\DialogueClass.cs" />
     <Compile Include="Assets\Scripts\DialogueHandler.cs" />
     <Compile Include="Assets\Scripts\DoorInteraction.cs" />
@@ -293,10 +295,10 @@
     <Compile Include="Assets\Scripts\MiniGames\WireGameInteraction.cs" />
     <Compile Include="Assets\Scripts\MiniGames\WireMiniGame.cs" />
     <Compile Include="Assets\Scripts\NextDay.cs" />
+    <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\ShipLog.cs" />
     <Compile Include="Assets\Scripts\ShipLogManager.cs" />
     <Compile Include="Assets\Scripts\ShipLogTrigger.cs" />
-    <Compile Include="Assets\Scripts\Tasks.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Pixel Font - Tripfive\_README.txt" />

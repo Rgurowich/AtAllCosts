@@ -21,6 +21,7 @@ public class DialogueHandler : MonoBehaviour {
     public Text reponseTextTwo;
     public Text reponseTextThree;
     public Text reponseTextFour;
+    public GameObject chatIcon;
 
     private int resLength;
     private int nextMsg;
@@ -30,35 +31,39 @@ public class DialogueHandler : MonoBehaviour {
     int currentIndex = 0;
 
     private bool entered = false;
-    public bool firstTime = false;
+    [HideInInspector] public bool firstTime = false;
+    [HideInInspector] public bool inConvo = false;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && entered == true)
+        if (inConvo == false)
         {
-            dialogueBox.SetActive(true);
-            reponseOne.SetActive(false);
-            reponseTwo.SetActive(false);
-            reponseThree.SetActive(false);
-            reponseFour.SetActive(false);
-            LoadDialogue();
+            if (Input.GetKeyDown(KeyCode.E) && entered == true)
+            {
+                inConvo = true;
+                dialogueBox.SetActive(true);
+                reponseOne.SetActive(false);
+                reponseTwo.SetActive(false);
+                reponseThree.SetActive(false);
+                reponseFour.SetActive(false);
+                LoadDialogue();
+                chatIcon.SetActive(false);
+            }
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Enter");
-
         entered = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Debug.Log("Exit");
-
         entered = false;
 
         dialogueBox.SetActive(false);
+
+        inConvo = false;
     }
 
     public void LoadDialogue()
@@ -68,9 +73,7 @@ public class DialogueHandler : MonoBehaviour {
             firstTime = true;
             currentIndex = 0;
             nameText.text = dialogue.npcName;
-            Debug.Log(dialogue.npcName);
             messageText.text = dialogue.messages[0].text;
-            Debug.Log(dialogue.messages[0].text);
             resLength = dialogue.messages[0].responses.Length;
             GetResLength();
         }
@@ -89,7 +92,7 @@ public class DialogueHandler : MonoBehaviour {
     {
         int buttonPressed = 0;
         string buttonName = EventSystem.current.currentSelectedGameObject.name;
-        
+
         if (buttonName == "ResponseOne")
         {
             buttonPressed = 0;
@@ -115,23 +118,18 @@ public class DialogueHandler : MonoBehaviour {
         if(dialogue.messages[currentIndex].responses[0].reply == "*Leave*")
         {
             dialogueBox.SetActive(false);
+            inConvo = false;
         }
-
-        Debug.Log("Current = " + currentIndex);
 
         nextMsg = dialogue.messages[currentIndex].responses[buttonPressed].next;
 
         resLength = dialogue.messages[nextMsg].responses.Length;
-
-        Debug.Log("Res Length = " + resLength);
-        Debug.Log("Next Message = " + nextMsg);
 
         messageText.text = dialogue.messages[nextMsg].text;
 
         GetResLength();
 
         msgNum = nextMsg;
-        Debug.Log(msgNum);
         currentIndex = msgNum;
     }
 

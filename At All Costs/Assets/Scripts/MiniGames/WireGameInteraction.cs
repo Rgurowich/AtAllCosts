@@ -5,26 +5,18 @@ using UnityEngine;
 public class WireGameInteraction : MonoBehaviour {
 
     private bool entered;
-    private bool playing;
     public GameObject WireGame;
-
-    void Start()
-    {
-        playing = false;
-    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && entered == true && playing == false)
+        if (Input.GetKeyDown(KeyCode.E) && entered == true)
         {
             WireGame.SetActive(true);
-            playing = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && playing == true)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
             WireGame.SetActive(false);
-            playing = false;
         }
     }
 

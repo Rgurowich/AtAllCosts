@@ -2,6 +2,7 @@ WindowsStandalone
 SceneListBegin?
 Assets/Scenes/MainMenu.unity
 Assets/Scenes/AAC_Start.unity
+Assets/Scenes/AAC_Day2.unity
 SceneListEnd?
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationPlayableAsset
 dbc29a6f2739d277c10da432d73adb6d UnityEngine.Timeline.dll:UnityEngine.Timeline.ActivationTrack
@@ -109,7 +110,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 73843688b51256aed059f049c540bca8 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformChild
 528ea1fd7c01796fc60c4e2f172ea229 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkTransformVisualizer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-b5f5094cfe051f4ff0e63a7277c5fd98 Assembly-CSharp.dll:.Intro
+4a7fb264917ca5669c3b61a78552d870 Assembly-CSharp.dll:.Intro
 322cb40e1e282f28af980cbef7922a90 UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsEventTracker
 dc07d7ad69b399a46e92c483bf1c04ca UnityEngine.Analytics.dll:UnityEngine.Analytics.AnalyticsTracker
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
@@ -117,10 +118,12 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 463516d5b5fe8e67a0a24c48f2095b04 UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInputModule
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
+24992e548e095fd50f57d9de3106570d Assembly-CSharp.dll:.PauseMenu
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.CallbackExecutor
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Advertisements.dll:UnityEngine.Advertisements.Editor.Placeholder
-f5bccacf175868abfcab4641b471960d Assembly-CSharp.dll:.WireMiniGame
-9499141b1ba5e2acae80592336a3bc61 Assembly-CSharp.dll:.DialogueHandler
+7888e36fbcc6fa02f0aeef2d49dce958 Assembly-CSharp.dll:.ShipLogManager
+d647ef18dd6cb2baa63ac92e39e255ce Assembly-CSharp.dll:.WireMiniGame
+8b576d1fc19c11ce32f72865b6f3e6d3 Assembly-CSharp.dll:.DialogueHandler
 fc1e0f4d8439d9928083474691511a13 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkAnimator
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.Networking.dll:UnityEngine.Networking.NetworkBehaviour
 60b2bb652410a5867a5ab9a01cd38461 UnityEngine.Networking.dll:UnityEngine.Networking.NetworkDiscovery
@@ -140,6 +143,7 @@ e9bdabf9265d758d56f01bb188916fa8 UnityEngine.Networking.dll:UnityEngine.Networki
 64eb32cc721b1cc68a91ed57461e188c UnityEngine.TestRunner.dll:UnityEngine.TestTools.TestRunner.Callbacks.RemoteTestResultSender
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
 e0f7ffd5d5c2abe4b2e16569a21163da UnityEngine.GoogleAudioSpatializer.dll:UnityEngine.Experimental.Audio.Google.GvrAudioRoom
+2a480f0d6c3bf47472712540feae3b33 Assembly-CSharp.dll:.NextDay
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.MainMenu
 bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.AudioSpatializerMicrosoft
 05524b8f659e7bfe5756d1335fec24ba UnityEngine.HoloLens.dll:UnityEngine.EventSystems.HoloLensInput
@@ -147,6 +151,9 @@ bc68edb0af574bf79f9550ead8ebae5c UnityEngine.HoloLens.dll:UnityEngine.Audio.Audi
 c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingCollider
 45f3431f0103c41611e8d4eec3d439df UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.SpatialMappingRenderer
 9de3a22eca9aefadba2d10d5987cefe3 UnityEngine.SpatialTracking.dll:UnityEngine.SpatialTracking.TrackedPoseDriver
-cb7e61029caf51e93bfccbca4184f789 Assembly-CSharp.dll:.DoorInteraction
-7f58881769ba02271d300aff47176643 Assembly-CSharp.dll:.Contoller
-604785621ac11405bec3d6e531f3e75d Assembly-CSharp.dll:.Tasks
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.IntroTrigger
+05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ShipLogTrigger
+93ccdc5ea38dc6625242b4520daa553c Assembly-CSharp.dll:.DoorInteraction
+98c964c7a188b263cd34ce0b95369a8e Assembly-CSharp.dll:.Contoller
+9b88d4cdd03ede2d09c94cf95f2ea5a1 Assembly-CSharp.dll:.Tasks2
+e3c600aaf3c91d3ec12ebad11086c47a Assembly-CSharp.dll:.Tasks

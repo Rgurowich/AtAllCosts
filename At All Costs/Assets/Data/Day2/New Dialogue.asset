@@ -1,0 +1,100 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3217ad733ccbd3e4d89af07e4bdc7add, type: 3}
+  m_Name: New Dialogue
+  m_EditorClassIdentifier: 
+  npcID: 0
+  npcName: Sasha
+  messages:
+  - text: Good Morning Hayden! How are you feeling?
+    responses:
+    - next: 1
+      reply: 'Feeling good thanks, ready to do some work! '
+      prereq: 
+      trigger: 
+    - next: 2
+      reply: Just wanna get this over and done with.
+      prereq: 
+      trigger: 
+  - text: 'Exellent! Me too, shall i go through what we''ll be doing? '
+    responses:
+    - next: 3
+      reply: Sure
+      prereq: 
+      trigger: 
+    - next: 3
+      reply: If we have too
+      prereq: 
+      trigger: 
+  - text: 'Ok well i''ll just get stright into it then '
+    responses:
+    - next: 3
+      reply: That would be great
+      prereq: 
+      trigger: 
+  - text: Ok so today you'll need to rewire the mobile generator outside so we can
+      revert some power to the labs on the base as they currently don't have any power.
+    responses:
+    - next: 4
+      reply: Sounds simple enough!
+      prereq: 
+      trigger: 
+    - next: 5
+      reply: 'How come this isn''t already all wired up already? '
+      prereq: 
+      trigger: 
+  - text: Great! Let's get to is then!
+    responses:
+    - next: 6
+      reply: Ok Sweet
+      prereq: 
+      trigger: 
+  - text: We're not sure. We think something was probbably damaged when the base was
+      shoot down from space. I mean i'm surprised more isn't damaged, it's a long
+      way for something this big to fall.
+    responses:
+    - next: 6
+      reply: Yeah thats very true! Well we better get to it
+      prereq: 
+      trigger: 
+  - text: Right! Would you like me to go through how to do the rewiring?
+    responses:
+    - next: 7
+      reply: Yeah if you could
+      prereq: 
+      trigger: 
+    - next: 8
+      reply: No Thanks, i'll figure it out
+      prereq: 
+      trigger: 
+  - text: 'You need to match the correct coloured wires together. Click a wire to
+      select it then click the wire you want to connect it to. The wires need to be
+      connected in a certain order. If a wire is connected in the incorrect order
+      it will disconnect all wires so remember the order you connect them in. You
+      only have 30 seconds to connect the wires before the circuit shorts but you
+      can retry if this happens. '
+    responses:
+    - next: 9
+      reply: Ok Sounds good
+      prereq: 
+      trigger: 
+  - text: Fair enough, good luck!
+    responses:
+    - next: 0
+      reply: '*Leave*'
+      prereq: 
+      trigger: 
+  - text: Exellent! Head outside and give it a go
+    responses:
+    - next: 0
+      reply: '*Leave*'
+      prereq: 
+      trigger: 

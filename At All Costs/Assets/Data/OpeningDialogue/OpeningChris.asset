@@ -72,8 +72,8 @@ MonoBehaviour:
       worry about it though. We\u2019re all smart."
     responses:
     - next: 8
-      reply: "That's good to hear haha. Scaremongering? Doesn\u2019t sound like something
-        a security guy should be doing"
+      reply: 'I guess he wouldn''t have been picked for this mission is he was really
+        that bad though right? '
       prereq: 
       trigger: 
   - text: "That\u2019s great to hear Hayden, I hope you\u2019re right."
