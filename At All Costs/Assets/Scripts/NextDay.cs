@@ -15,13 +15,16 @@ public class NextDay : MonoBehaviour {
     public Image useIcon;
     public AudioSource mainMusic;
 
+
+    //This script controls the ship log end day sequence//
     void Start()
     {
         dayCompleted = false;
     }
 
-
     void Update () {
+
+        //if the tasks for the day have been completed the user can continue to the next day by pressing E next to their bed//
 		if(dayCompleted == true)
         {
             if(Input.GetKeyDown(KeyCode.E) && entered == true)

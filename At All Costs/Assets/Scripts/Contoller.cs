@@ -15,6 +15,8 @@ public class Contoller : MonoBehaviour {
     private bool isWalking;
     private bool moving;
 
+    //simple script for managing the plays movement
+
     void Start () {
         rigBody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();

@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//Class that creates the scriptable objects that contain the dialogue data//
+
 [System.Serializable]
-[CreateAssetMenu(fileName = "New Dialogue", menuName = "Data / New Dialogue")]
+[CreateAssetMenu(fileName = "New Dialogue", menuName = "Data / New Dialogue")] 
 public class DialogueClass : ScriptableObject
 {
     public int npcID;
@@ -27,4 +29,3 @@ public class Response
     public string trigger;
 
 }
-public class CreateDialogue : DialogueClass {}

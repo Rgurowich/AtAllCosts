@@ -60,7 +60,7 @@ MonoBehaviour:
         out a bit."
       prereq: 
       trigger: 
-  - text: "I can Imagine! Well at least you\u2019re ok now!"
+  - text: Sooo..
     responses:
     - next: 6
       reply: "So, What\u2019s your name?"
@@ -81,7 +81,7 @@ MonoBehaviour:
   - text: "Haha i haven\u2019t even introduced myself! I\u2019m Sasha Fleets, I\u2019m
       a science technician and engineer, like you!"
     responses:
-    - next: 10
+    - next: 5
       reply: Ah well hi Sasha, Looking forward to working with you!
       prereq: 
       trigger: 
@@ -100,7 +100,7 @@ MonoBehaviour:
       were on the team with but i wanted to know who i was gonna be saving humanity
       with haha
     responses:
-    - next: 10
+    - next: 5
       reply: "Hmm, fair enough haha, I guess i won\u2019t bother introducing myself
         then"
       prereq: 
@@ -111,22 +111,14 @@ MonoBehaviour:
       reply: '*Leave*'
       prereq: 
       trigger: 
-  - text: Soooo..
+  - text: I really couldn't say, but its been a long time!
     responses:
-    - next: 6
-      reply: "So, What\u2019s your name?"
+    - next: 5
+      reply: Damn! That's kinda scary!
       prereq: 
       trigger: 
-    - next: 7
-      reply: So where are we exactly?
-      prereq: 
-      trigger: 
-    - next: 8
-      reply: How did you know who i was when you found me?
-      prereq: 
-      trigger: 
-    - next: 9
-      reply: Seeya round
+    - next: 5
+      reply: Feel like I could go for another 100 years haha
       prereq: 
       trigger: 
   - text: Hey again!

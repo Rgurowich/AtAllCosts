@@ -7,16 +7,13 @@ public class WireGameInteraction : MonoBehaviour {
     private bool entered;
     public GameObject WireGame;
 
+    //interaction script for the minigame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E) && entered == true)
         {
+            GameObject.Find("Hayden").GetComponent<Contoller>().enabled = false;
             WireGame.SetActive(true);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            WireGame.SetActive(false);
         }
     }
 

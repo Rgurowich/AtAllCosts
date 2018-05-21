@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ShipLogManager : MonoBehaviour {
 
+    //script for managing the text readouts for the intro and ship load sequences//
+
     public Text ShipLogText;
     public Text IntroText;
 

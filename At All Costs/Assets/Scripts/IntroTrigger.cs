@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IntroTrigger : MonoBehaviour {
 
+    //trigger for intro
     void OnEnable()
     {
         FindObjectOfType<ShipLogManager>().StartIntro();

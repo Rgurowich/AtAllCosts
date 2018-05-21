@@ -16,6 +16,8 @@ public class DoorInteraction : MonoBehaviour {
     public Text noEntrySignText;
     private string roomName;
 
+    //script that takes in the names of each door and displays a label above it, also displays hub icons//
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.transform.IsChildOf(doors))

@@ -17,8 +17,9 @@ public class Tasks2 : MonoBehaviour {
     public Text task1;
     public Text task2;
     public Text task2Header;
+    public GameObject taskDone;
 
-
+    //Script for displaying the tasks for day 2//
     void Update()
     {
 
@@ -26,7 +27,6 @@ public class Tasks2 : MonoBehaviour {
 
         if (sasha.firstTime == true && wireGame.gameCompleted == true)
         {
-            Debug.Log("YOU CAN SLEEP");
             dayCompleted = true;
             nextDay.dayCompleted = true;
         }
@@ -53,6 +53,10 @@ public class Tasks2 : MonoBehaviour {
         if (wireGame.gameCompleted == true)
         {
             task2.enabled = false;
+        }
+        if(nextDay.dayCompleted == true)
+        {
+            taskDone.SetActive(true);
         }
     }
 }

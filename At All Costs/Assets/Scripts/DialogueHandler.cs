@@ -34,10 +34,13 @@ public class DialogueHandler : MonoBehaviour {
     [HideInInspector] public bool firstTime = false;
     [HideInInspector] public bool inConvo = false;
 
+    //Script for displaying the dialogue between player and NPC//
+
     void Update()
     {
         if (inConvo == false)
         {
+            //This if statment calls the LoadDialogue method when a user starts a convosation//
             if (Input.GetKeyDown(KeyCode.E) && entered == true)
             {
                 inConvo = true;
@@ -66,6 +69,7 @@ public class DialogueHandler : MonoBehaviour {
         inConvo = false;
     }
 
+    //This method first checks to see if the player has already spooken to them before and then loads either the first dialogue or the dialoge loop then calls LoadText to display it//
     public void LoadDialogue()
     {
         if (firstTime == false)
@@ -83,15 +87,16 @@ public class DialogueHandler : MonoBehaviour {
             nameText.text = dialogue.npcName;
             messageText.text = dialogue.messages[dialogue.messages.Length-1].text;
             resLength = dialogue.messages[dialogue.messages.Length-1].responses.Length;
-            GetResLengthReturn();
-        }     
+            nextMsg = dialogue.messages.Length - 1;
+            GetResLength();
+        }
     }
 
 
     public void LoadText()
     {
         int buttonPressed = 0;
-        string buttonName = EventSystem.current.currentSelectedGameObject.name;
+        string buttonName = EventSystem.current.currentSelectedGameObject.name; //Gets the name of the button pressed//
 
         if (buttonName == "ResponseOne")
         {
@@ -115,24 +120,25 @@ public class DialogueHandler : MonoBehaviour {
         reponseThree.SetActive(false);
         reponseFour.SetActive(false);
 
-        if(dialogue.messages[currentIndex].responses[0].reply == "*Leave*")
+        if(dialogue.messages[currentIndex].responses[0].reply == "*Leave*") //if the reply is "*Leave*" the dialogue will end//
         {
             dialogueBox.SetActive(false);
             inConvo = false;
         }
 
-        nextMsg = dialogue.messages[currentIndex].responses[buttonPressed].next;
+        nextMsg = dialogue.messages[currentIndex].responses[buttonPressed].next; //get the next message number from the button pressed//
 
         resLength = dialogue.messages[nextMsg].responses.Length;
 
         messageText.text = dialogue.messages[nextMsg].text;
 
-        GetResLength();
+        GetResLength(); //uses this methord to find out how many replys there are to a message//
 
         msgNum = nextMsg;
         currentIndex = msgNum;
     }
 
+    //this method uses the length of the responces array to figure out how many buttons should be displayed//
     void GetResLength()
     {
         if (resLength == 1)
@@ -167,44 +173,6 @@ public class DialogueHandler : MonoBehaviour {
             reponseTextThree.text = dialogue.messages[nextMsg].responses[2].reply;
             reponseFour.SetActive(true);
             reponseTextFour.text = dialogue.messages[nextMsg].responses[3].reply;
-
-        }
-    }
-
-    void GetResLengthReturn()
-    {
-        if (resLength == 1)
-        {
-            reponseOne.SetActive(true);
-            reponseTextOne.text = dialogue.messages[dialogue.messages.Length - 1].responses[0].reply;
-        }
-        if (resLength == 2)
-        {
-            reponseOne.SetActive(true);
-            reponseTextOne.text = dialogue.messages[dialogue.messages.Length - 1].responses[0].reply;
-            reponseTwo.SetActive(true);
-            reponseTextTwo.text = dialogue.messages[dialogue.messages.Length - 1].responses[1].reply;
-        }
-        if (resLength == 3)
-        {
-            reponseOne.SetActive(true);
-            reponseTextOne.text = dialogue.messages[dialogue.messages.Length - 1].responses[0].reply;
-            reponseTwo.SetActive(true);
-            reponseTextTwo.text = dialogue.messages[dialogue.messages.Length - 1].responses[1].reply;
-            reponseThree.SetActive(true);
-            reponseTextThree.text = dialogue.messages[dialogue.messages.Length - 1].responses[2].reply;
-
-        }
-        if (resLength == 4)
-        {
-            reponseOne.SetActive(true);
-            reponseTextOne.text = dialogue.messages[dialogue.messages.Length - 1].responses[0].reply;
-            reponseTwo.SetActive(true);
-            reponseTextTwo.text = dialogue.messages[dialogue.messages.Length - 1].responses[1].reply;
-            reponseThree.SetActive(true);
-            reponseTextThree.text = dialogue.messages[dialogue.messages.Length - 1].responses[2].reply;
-            reponseFour.SetActive(true);
-            reponseTextFour.text = dialogue.messages[dialogue.messages.Length - 1].responses[3].reply;
 
         }
     }

@@ -26,7 +26,10 @@ public class Tasks : MonoBehaviour {
     public Text task5;
     public Text task6;
     public Text task7;
+    public GameObject taskDone;
 
+
+    //script to managen the tasks for day 1//
     void Update()
     {
 
@@ -78,6 +81,10 @@ public class Tasks : MonoBehaviour {
         if (emilia.firstTime == true)
         {
             task7.color = Color.white;
+        }
+        if (nextDay.dayCompleted == true)
+        {
+            taskDone.SetActive(true);
         }
     }
 }

@@ -43,8 +43,9 @@ public class WireMiniGame : MonoBehaviour {
 
     //private float[] nums = new float[3];
 
+    //Script that controls the wire minigame//
 
-    // Use this for initialization
+    //Sets all wires to false and does a complete reset of the game//
     void Start () {
         FirstWireName = "Not Selected";
         greenConnected = false;
@@ -57,18 +58,16 @@ public class WireMiniGame : MonoBehaviour {
         CompleteRestart();
     }
 
-    void OnEnable()
-    {
-        timeLeft = 30;
-    }
-
-    // Update is called once per frame
     void Update () {
+        //Timer counts down until it reaches 0//
         if(gameFinished == false)
         {
             timeLeft -= Time.deltaTime;
         }
+
         timeDisplay.text = timeLeft.ToString("00:00");
+
+        //sets all wire buttons to interactible when a wire is not selected//
         if(FirstWireName == "Not Selected")
         {
             for (int i = 0; i < Wires.Length; i++)
@@ -77,6 +76,7 @@ public class WireMiniGame : MonoBehaviour {
             }
         }
 
+        //if all wires are connected the game is won//
         if(greenConnected == true && purpleConnected == true && blueConnected == true && redConnected == true)
         {
             timeDisplay.text = "SYNC";
@@ -86,6 +86,7 @@ public class WireMiniGame : MonoBehaviour {
             gameCompleted = true;
         }
 
+        //if the timer reaches 0 the game is lost and the player is give the option to retry//
         if(timeLeft <= 0)
         {
             for (int i = 0; i < Wires.Length; i++)
@@ -100,6 +101,7 @@ public class WireMiniGame : MonoBehaviour {
         }
     }
 
+    //This methord finds the wire button that has been clicked on by its name then checks to see it the next wire if compatible with the first wire selected//
     public void GetFirstWire()
     {
         if (FirstWireName == "Not Selected")
@@ -187,6 +189,8 @@ public class WireMiniGame : MonoBehaviour {
                 gameAudio.Play();
             }
 
+
+            //this is the order the wires must be connected in else all the connect wires disconnect//
             if (redConnected == true && greenConnected == false && purpleConnected == false && blueConnected == false)
             {
                 Debug.Log(" 1 CORRECT ");
@@ -531,6 +535,7 @@ public class WireMiniGame : MonoBehaviour {
         
     }
 
+    //this methord disconnects all the wires and makes all the buttons reactivated after an error is made by the play//
     void ResetGame()
     {
 
@@ -561,6 +566,7 @@ public class WireMiniGame : MonoBehaviour {
         }
     }
 
+    //This methord is for completely restarting the game from the beginning//
     public void CompleteRestart()
     {
         //nums = new float[4];
@@ -784,8 +790,10 @@ public class WireMiniGame : MonoBehaviour {
     public void ExitGame()
     {
         wireGame.SetActive(false);
+        GameObject.Find("Hayden").GetComponent<Contoller>().enabled = true;
     }
 
+    //This methord fills the power bar on the minigame depending on how many wires are connected//
     void PowerIndicater()
     {
         

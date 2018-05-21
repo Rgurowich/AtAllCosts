@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Intro : MonoBehaviour {
 
+    //Script for managering the intro animiations//
+
     public Animator lastShip;
     public GameObject ship;
     public GameObject intro;

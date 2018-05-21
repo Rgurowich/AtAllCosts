@@ -16,7 +16,13 @@ MonoBehaviour:
   messages:
   - text: NOT INCLUDED IN DEMO
     responses:
+    - next: 1
+      reply: Ok
+      prereq: 
+      trigger: 
+  - text: NOT INCLUDED IN DEMO
+    responses:
     - next: 0
-      reply: '*Leave* '
+      reply: '*Leave*'
       prereq: 
       trigger: 

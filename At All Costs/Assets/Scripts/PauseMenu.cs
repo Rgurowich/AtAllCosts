@@ -8,6 +8,9 @@ public class PauseMenu : MonoBehaviour {
     public GameObject pauseMenu;
     private bool isOpen = false;
 
+
+    //Script for displaying a simple pause menu so the player can exit the game//
+
     void Update () {
 
         if (Input.GetKeyDown(KeyCode.Escape) && isOpen == false)

@@ -155,5 +155,5 @@ c2275a8bfbb9f9942cad75ecdfded41d UnityEngine.HoloLens.dll:UnityEngine.XR.WSA.Spa
 05524b8f659e7bfe5756d1335fec24ba Assembly-CSharp.dll:.ShipLogTrigger
 93ccdc5ea38dc6625242b4520daa553c Assembly-CSharp.dll:.DoorInteraction
 98c964c7a188b263cd34ce0b95369a8e Assembly-CSharp.dll:.Contoller
-9b88d4cdd03ede2d09c94cf95f2ea5a1 Assembly-CSharp.dll:.Tasks2
-e3c600aaf3c91d3ec12ebad11086c47a Assembly-CSharp.dll:.Tasks
+73d833c23804bf3be0641d7138ca15d0 Assembly-CSharp.dll:.Tasks2
+9c6a00151ece4b2964749823d0f160de Assembly-CSharp.dll:.Tasks

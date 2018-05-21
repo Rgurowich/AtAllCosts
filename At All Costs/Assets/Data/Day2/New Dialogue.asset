@@ -98,3 +98,13 @@ MonoBehaviour:
       reply: '*Leave*'
       prereq: 
       trigger: 
+  - text: 'Hey! Everything ok? '
+    responses:
+    - next: 7
+      reply: 'Could you go over how to repair the generator again? '
+      prereq: 
+      trigger: 
+    - next: 9
+      reply: See ya round!
+      prereq: 
+      trigger: 

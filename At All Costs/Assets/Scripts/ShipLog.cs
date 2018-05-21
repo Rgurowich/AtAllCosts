@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class ShipLog{
 
+    //A class made to create ship log objects that are then used to display in the ship log//
+
     [System.Serializable]
     public class ShipLogText
     {
