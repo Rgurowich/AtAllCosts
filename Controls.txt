@@ -1,0 +1,5 @@
+//AT ALL COSTS CONTROLS//
+
+Use the WASD keys to move the player
+
+Press the E key to interact with doors, object and NPCs when the popup shows
